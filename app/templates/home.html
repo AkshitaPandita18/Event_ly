@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Homepage</h2>
+  <p>Welcome to the project,
+    {% if user.is_authenticated %}
+    {{ user.username}}!<br>
+    <a href="{% url 'event' %}">Manage your event</a>
+    {% else %}visitor!
+    {% endif %}</p>
+  <p>
+    <strong>Total users registered:</strong>{{ count }}
+  </p>
+{% endblock %}
